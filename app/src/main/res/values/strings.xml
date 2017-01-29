@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">NightClockMVP</string>
+    <string name="remindEdit">Remind me !!!!!</string>
+    <string name="remindBT">Remind</string>
+    <string name="cancelBT">Cancel</string>
+    <string name="alarmCB">Alarm Me !!!</string>
+    <string name="alarmBT">OK</string>
+    <string name="hourLabel">Hour : </string>
+    <string name="minuteLabel">Minute : </string>
+
+</resources>
