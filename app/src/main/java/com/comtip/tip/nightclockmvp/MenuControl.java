@@ -14,7 +14,6 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 /**
  * Created by TipRayong on 28/1/2560 15:46
@@ -24,7 +23,7 @@ public class MenuControl {
     // เมนู
     public ListView menuList = null;
     public DrawerLayout drawerLayout = null;
-    final String[] menuItem = {"Remind", "Alarm", "Animation", "Text Color","Lullaby"};
+    final String[] menuItem = {"Remind", "Alarm", "Animation", "Text Color","Night Mode"};
     MainActivity main;
     Context context;
 
@@ -62,10 +61,10 @@ public class MenuControl {
                        selectTextColor();
                     break;
 
-                case 4: // Lullaby
+                case 4: // Night Mode
 
                     AlertDialog.Builder alertLoad = new AlertDialog.Builder(context);
-                    alertLoad.setTitle("♨ Lullaby ♨");
+                    alertLoad.setTitle("♨ Night Mode ♨");
 
                     alertLoad.setNegativeButton("✘ NO ✘", new DialogInterface.OnClickListener() {
                         @Override
@@ -76,8 +75,11 @@ public class MenuControl {
                     alertLoad.setPositiveButton("✔ YES ✔", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            //         startLullaby();
-                            Toast.makeText(context, "นอนฝันดี", Toast.LENGTH_SHORT).show();
+                            // Dim Screen Filter
+                            final Dialog nightmodeDialog = new Dialog(context,R.style.CustomDialog);
+                            nightmodeDialog.setContentView(R.layout.nightmode_layout);
+                            nightmodeDialog.setCanceledOnTouchOutside(true);
+                            nightmodeDialog.show();
                         }
                     });
                     AlertDialog alertL = alertLoad.create();

@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setupWidgets();
     }
 
+
     private void setupWidgets () {
 
         ActiveClock activeClock = new ActiveClock(this);
